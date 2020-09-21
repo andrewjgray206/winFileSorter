@@ -37,22 +37,24 @@ while True:
         print("So, where do you want executables and installers/ect to go?")
         check = moveFunction.dirCheck(directory)
         if check != False:
-            moveFunction.sortFunction(check,".exe")
-            moveFunction.sortFunction(check,".zip")
-            moveFunction.sortFunction(check,".msi")
+            moveFunction.sortFunction(directory,check,".exe")
+            moveFunction.sortFunction(directory,check,".zip")
+            moveFunction.sortFunction(directory,check,".msi")
         print("Cool, how about images and media content?")
         check = moveFunction.dirCheck(directory)
         if check != False:
-            moveFunction.sortFunction(check,".jpg")
-            moveFunction.sortFunction(check,".png")
+            moveFunction.sortFunction(directory,check,".jpg")
+            moveFunction.sortFunction(directory,check,".png")
         print("What about documents?")
         check = moveFunction.dirCheck(directory)
         if check != False:
-            moveFunction.sortFunction(check,".doc")
-            moveFunction.sortFunction(check,".docx")
-            moveFunction.sortFunction(check,".xlsx")
-            moveFunction.sortFunction(check,".pdf")
-            moveFunction.sortFunction(check,".pptx")
+            moveFunction.sortFunction(directory,check,".doc")
+            moveFunction.sortFunction(directory,check,".docx")
+            moveFunction.sortFunction(directory,check,".xlsx")
+            moveFunction.sortFunction(directory,check,".pdf")
+            moveFunction.sortFunction(directory,check,".pptx")
 
     if dirType == 2:
         print ("placeholder 2")
+
+    print("finished")

@@ -1,24 +1,28 @@
 import os
 import shutil
 
-def sortFunction(directory,extension):
+def sortFunction(directory,destination,extension):
+            print("++++++++++++++++++++++++INITIATING COPY+++++++++++++++++++++++++++")
+            print ("")
             for file in os.listdir(directory):
+
                 if file.endswith(extension):
                     os.system("cls")
-                    print("INITIATING COPY.")
                     print("---------------------------------------------------------")
-                    shutil.move(file,exeDir)
-                    print (file +" Moved to " + exeDir)
-
+                    shutil.move(file,destination)
+                    print (file +" Moved to " + destination)
                 else:
                     print(file + "isn't " + extension +", skipping...")
-            
+
+            print ("----------------------------------------")
+            print ("----------------------------------------")
             print("ALL "+ extension+ "'s MOVED SUCCESSFULLY.")
 
 
 def dirCheck(directory):
         exeDir = input()
         exeDir = directory  + "\\" + exeDir
+        print ("The directory to send to should be" + exeDir)
 
         if os.path.exists(exeDir):
             print("Exists, continuing")
