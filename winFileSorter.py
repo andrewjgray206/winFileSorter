@@ -55,6 +55,7 @@ while True:
             moveFunction.sortFunction(directory,check,".pptx")
 
     if dirType == 2:
-        print ("placeholder 2")
+        print ("this feature isn't currently available, check back soon!!")
+        
 
     print("finished")
