@@ -40,11 +40,21 @@ while True:
             moveFunction.sortFunction(directory,check,".exe")
             moveFunction.sortFunction(directory,check,".zip")
             moveFunction.sortFunction(directory,check,".msi")
+            moveFunction.sortFunction(directory,check,".rar")
+            moveFunction.sortFunction(directory,check,".7z")
+        else:
+            print("------------------------------------------------------")
+            newDirCheck = input("So you didn't enter an existing directory, did you want to create one under that name?")
+            if newDirCheck == True:
+                os.mkdir(directory)
+            
         print("Cool, how about images and media content?")
         check = moveFunction.dirCheck(directory)
         if check != False:
             moveFunction.sortFunction(directory,check,".jpg")
             moveFunction.sortFunction(directory,check,".png")
+            moveFunction.sortFunction(directory,check,".jpeg")
+            moveFunction.sortFunction(directory,check,".bmp")
         print("What about documents?")
         check = moveFunction.dirCheck(directory)
         if check != False:
