@@ -5,9 +5,9 @@ import moveFunction
 while True:
     os.system("cls")
     print ("--------------------------------------------------------------------")
-    directory = input("Enter Directory to sort. ( 'xx' to exit) ")
+    directory = input("Enter Directory to sort. ( '0' to exit) ")
 
-    if directory == "xx":
+    if directory == "0":
         break;
 
     if os.path.exists(directory):
@@ -29,15 +29,15 @@ while True:
         print("Now you need to designate what files go into what folder.")
         print("Printing folders and files in the directory listed....")
         print("---------------------------------------------------------")
-        dirs = os.listdir(directory)
+        dirs = os.listdir(directory) #array of files
         for file in dirs:
-            print(file)
+            print(file) #prints file/folder name
         print("----------------------------------------------------------")
 
         print("So, where do you want executables and installers/ect to go?")
         check = moveFunction.dirCheck(directory)
         if check != False:
-            moveFunction.sortFunction(directory,check,".exe")
+            moveFunction.sortFunction(directory,check,".exe") #need to reformat and have list of all file extensions and just run through.
             moveFunction.sortFunction(directory,check,".zip")
             moveFunction.sortFunction(directory,check,".msi")
             moveFunction.sortFunction(directory,check,".rar")
@@ -51,21 +51,25 @@ while True:
         print("Cool, how about images and media content?")
         check = moveFunction.dirCheck(directory)
         if check != False:
-            moveFunction.sortFunction(directory,check,".jpg")
+            moveFunction.sortFunction(directory,check,".jpg") #need to reformat and have list of all file extensions and just run through.
             moveFunction.sortFunction(directory,check,".png")
             moveFunction.sortFunction(directory,check,".jpeg")
             moveFunction.sortFunction(directory,check,".bmp")
         print("What about documents?")
         check = moveFunction.dirCheck(directory)
         if check != False:
-            moveFunction.sortFunction(directory,check,".doc")
+            moveFunction.sortFunction(directory,check,".doc") #need to reformat and have list of all file extensions and just run through.
             moveFunction.sortFunction(directory,check,".docx")
             moveFunction.sortFunction(directory,check,".xlsx")
             moveFunction.sortFunction(directory,check,".pdf")
             moveFunction.sortFunction(directory,check,".pptx")
+            moveFunction.sortFunction(directory,check,".html")
+            moveFunction.sortFunction(directory,check,".odt")
 
     if dirType == 2:
-        print ("this feature isn't currently available, check back soon!!")
+        print ("Alright - These are going to sort them for you into a directory.")
+        autoSortDir = "C:/PythonSorter"
+
         
 
-    print("finished")
+    print("finished!!")

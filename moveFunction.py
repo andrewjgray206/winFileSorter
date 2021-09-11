@@ -18,7 +18,6 @@ def sortFunction(directory,destination,extension):
             print ("----------------------------------------")
             print("ALL "+ extension+ "'s MOVED SUCCESSFULLY.")
 
-
 def dirCheck(directory):
         exeDir = input()
         exeDir = directory  + "\\" + exeDir
